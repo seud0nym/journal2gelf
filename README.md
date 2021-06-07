@@ -25,12 +25,12 @@ Dependencies:
 Install
 -------
 
-On Fedora 17+ (or other systems with a version of systemd that includes journal
+On Debian 10+ (or other systems with a version of systemd that includes journal
 support):
 
 ```
-sudo yum install git python-pip
-pip-python install git+http://github.com/systemd/journal2gelf.git#egg=journal2gelf
+sudo apt install git python-pip python-setuptools python-wheel
+pip install git+http://github.com/seud0nym/journal2gelf.git#egg=journal2gelf
 ```
 
 Running as a service
