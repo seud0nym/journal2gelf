@@ -80,8 +80,8 @@ class JournalToGelf:
     def _send_gelf(self):
         try:
             msg = {'version': '1.0'}
-            record = json.loads(''.join(self.buf))
-            for key, value in record.iteritems():
+            record = json.loads(b''.join(self.buf))
+            for key, value in record.items():
                 # journalctl's JSON exporter will convert unprintable (incl. newlines)
                 # strings into an array of integers. We convert these integers into
                 # their ascii representation and concatenate them together
@@ -113,7 +113,7 @@ class JournalToGelf:
                     # prefix additional fields with '_' for graylog.
                     msg['_' + key] = value
             if msg['short_message'] and len(msg['short_message'].strip()) > 0:
-                self.gelf.send(zlib.compress(json.dumps(msg)))
+                self.gelf.send(zlib.compress(json.dumps(msg).encode("utf8")))
         except ValueError:
             print("Warning: invalid JSON. Skipping this record.")
         finally:
