@@ -119,7 +119,7 @@ class JournalToGelf:
             if msg['short_message'] and len(msg['short_message'].strip()) > 0:
                 self.gelf.send(zlib.compress(json.dumps(msg)))
         except ValueError:
-            print "Warning: invalid JSON. Skipping this record."
+            print("Warning: invalid JSON. Skipping this record.")
         finally:
             self.buf.clear()
 
@@ -176,7 +176,7 @@ if __name__ == '__main__':
     for line in iter(read_from_fd.readline, ''):
         try:
             parser.run(line)
-        except Exception, e:
-            print "Error sending line to graylog"
-            print e
-            print line
+        except Exception as e:
+            print("Error sending line to graylog")
+            print(e)
+            print(line)

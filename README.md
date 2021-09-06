@@ -4,8 +4,6 @@ journal2gelf
 Export structured log records from the systemd journal and send them to a
 Graylog2 server as GELF messages.
 
-Tested on Python 2.7 and Fedora 17 (systemd-44-17) and Fedora 19 (systemd-204).
-
 journalctl output format change
 -------------------------------
 
