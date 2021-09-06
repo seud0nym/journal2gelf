@@ -27,7 +27,7 @@ On Debian 10+ (or other systems with a version of systemd that includes journal
 support):
 
 ```
-sudo apt install git python-pip python-setuptools python-wheel
+sudo apt install git python3-pip python3-setuptools python3-wheel
 pip install git+http://github.com/seud0nym/journal2gelf.git#egg=journal2gelf
 ```
 

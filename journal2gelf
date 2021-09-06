@@ -1,4 +1,4 @@
-#!/usr/bin/python -u
+#!/usr/bin/python3 -u
 #
 # journal2gelf
 # ============
@@ -49,11 +49,7 @@ import graypy
 
 from collections import deque
 
-# TODO:
-# - [nice to have] rabbitmq handler
-
 class JournalToGelf:
-
     facility_names = {
         0:   "kern",
         1:   "user",
